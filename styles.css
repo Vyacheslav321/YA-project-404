@@ -1,0 +1,54 @@
+body, img, main, .tooltip, .footer {
+  margin: 0px;
+  padding: 0;
+  font-size: 100%;
+  font-weight: normal;
+  overflow: hidden;
+}
+
+body {
+  color: #2f80ed;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+
+img {
+  padding: 110px 0px 10px;
+  margin: auto;
+  display: block;
+  max-width: 100%;
+}
+
+main {
+  height: 400px;
+}
+
+.tooltip {
+  width: 420px;
+  margin: auto;
+  text-align: center;
+  font-size: 122px;
+  font-weight: 500;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip); /*вывод текста*/
+  opacity: 0; /*элемент прозрачен*/
+  display: flex;
+  position: absolute;
+  visibility: hidden; /*элемент скрыт*/
+  font-size: 16px;
+  transition: 2s;/*перход за 1 сек*/
+  width: 420px;
+  padding-top: 22px;
+}
+
+.tooltip:hover::after {
+  opacity: 1; /*элемент не прозрачен*/
+  visibility: visible;/*элемент виден*/
+}
+
+.footer {
+  padding-bottom: 30px;
+  flex: auto;
+  text-align: center;
+}
